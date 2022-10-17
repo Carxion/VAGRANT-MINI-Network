@@ -17,18 +17,18 @@ Vagrant.configure("2") do |config|
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
-   config.vm.box_check_update = true
+  config.vm.box_check_update = true
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
-   config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 80, host: 8080
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
   # via 127.0.0.1 to disable public access
-   config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "192.168.1.130"
+  config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "192.168.1.130"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -38,7 +38,6 @@ Vagrant.configure("2") do |config|
   # Bridged networks make the machine appear as another physical device on
   # your network.
   config.vm.network "public_network"
-
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
@@ -55,7 +54,7 @@ Vagrant.configure("2") do |config|
   #
   #   # Customize the amount of memory on the VM:
   vb.memory = "2048"
-  vb.cpu = "2"
+  #vb.cpu = "2"
   # end
   #
   # View the documentation for the provider you are using for more
@@ -64,9 +63,11 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
-   config.vm.provision "shell", inline: <<-SHELL
-     yum update
-     yum install dhcp
-     echo "hello world"
-  SHELL
+ # config.vm.provision "shell", inline: <<-SHELL
+ #  yum update
+ #  yum install dhcp
+ #  echo "hello world"
+ #SHELL
+ end
 end
+
