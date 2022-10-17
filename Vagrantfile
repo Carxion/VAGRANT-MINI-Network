@@ -67,6 +67,6 @@ Vagrant.configure("2") do |config|
    config.vm.provision "shell", inline: <<-SHELL
      yum update
      yum install dhcp
-
+     echo "hello world"
   SHELL
 end
